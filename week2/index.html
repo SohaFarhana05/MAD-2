@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator using JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff; 
+            color: #003366; 
+            margin: 0;
+            padding: 0;
+        }
+        #app {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 id="title">Simple Calculator using JS</h1>
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="col-md-12">
+                <h3>Enter your expression:</h3>
+            </div>
+            <div>
+                <input type="text" placeholder="Enter text here" id="expressionInput" />
+                <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+            </div>
+            <div class="col-md-12">
+                <h3>Result:</h3>
+            </div>
+            <div class="col-md-12">
+                <h3 id="result"></h3>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    function calculate() {
+        const expression = document.getElementById("expressionInput").value; 
+        try {
+            const res = eval(expression); 
+            document.getElementById("result").innerHTML = res; 
+        } catch (error) {
+            document.getElementById("result").innerHTML = "Invalid Expression"; 
+        }
+    }
+</script>
+</html>
