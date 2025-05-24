@@ -16,8 +16,17 @@
             text-align: center;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@9.4.4/lib/browser/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@9.4.4/lib/browser/math.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@9.4.4/lib/browser/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@9.4.4/lib/browser/math.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@9.4.4/lib/browser/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@9.4.4/lib/browser/math.min.js"></script>
 </head>
-<body>
+<body onload="init()">
     <div id="app">
         <h1 id="title">Simple Calculator using JS</h1>
         <div class="container">
@@ -28,7 +37,7 @@
             </div>
             <div>
                 <input type="text" placeholder="Enter text here" id="expressionInput" />
-                <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+                <button class="btn btn-primary" onclick="math_calculate()">Calculate</button>
             </div>
             <div class="col-md-12">
                 <h3>Result:</h3>
@@ -36,18 +45,63 @@
             <div class="col-md-12">
                 <h3 id="result"></h3>
             </div>
+            <ul id="log"></ul>
         </div>
 
     </div>
 </body>
 <script>
+    function init() {
+        document.getElementById("expressionInput").focus();
+        document.getElementById("expressionInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                math_calculate();
+            }
+        });
+        document.getElementById("expression Input").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                math_calculate();
+            }
+        });
+        document.getElementById("expression Input").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                math_calculate();
+            }
+        });
+    }
+    function addlog(msg){
+        const log = document.getElementById("log");
+        const li = document.createElement("li");
+        li.textContent = msg;
+        log.appendChild(li);
+    }
     function calculate() {
         const expression = document.getElementById("expressionInput").value; 
         try {
             const res = eval(expression); 
-            document.getElementById("result").innerHTML = res; 
+            document.getElementById("result").innerHTML = res;
+            document.getElementById("expressionInput").value = "";
+            //document.getElementById("expressionInput").focus();
+            addlog("Expression: " + expression + " = " + res);
         } catch (error) {
-            document.getElementById("result").innerHTML = "Invalid Expression"; 
+            //document.getElementById("result").innerHTML = "Invalid Expression"; 
+            addlog("Invalid Expression: " + expression);
+        }
+    }
+    function math_calculate() {
+        const expression = document.getElementById("expressionInput").value; 
+        try {
+            const res = math.evaluate(expression); 
+            document.getElementById("result").innerHTML = res;
+            document.getElementById("expressionInput").value = "";
+            //document.getElementById("expressionInput").focus();
+            addlog("Expression: " + expression + " = " + res);
+        } catch (error) {
+            //document.getElementById("result").innerHTML = "Invalid Expression"; 
+            addlog("Invalid Expression: " + expression);
         }
     }
 </script>
