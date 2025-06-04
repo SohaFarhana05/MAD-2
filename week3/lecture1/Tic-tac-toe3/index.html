@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Tic-Tac-Toe | Vue.js</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">🎮 Cute Tic-Tac-Toe</h1>
+            <p class="subtitle">Built with Vue.js</p>
+        </header>
+
+        <!-- Game Container -->
+        <div class="game-container">
+            <!-- Game Status Display -->
+            <div class="game-status">
+                <div v-if="!gameOver && !winner" class="current-player">
+                    <span class="player-icon">{{ currentPlayer === 'X' ? '❌' : '⭕' }}</span>
+                    Player {{ currentPlayer }}'s turn
+                </div>
+                <div v-if="winner && winner !== 'tie'" class="winner-message">
+                    <span class="winner-icon">🎉</span>
+                    Player {{ winner }} wins!
+                    <span class="winner-icon">🎉</span>
+                </div>
+                <div v-if="winner === 'tie'" class="tie-message">
+                    <span class="tie-icon">🤝</span>
+                    It's a tie!
+                    <span class="tie-icon">🤝</span>
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="game-board">
+                <div 
+                    v-for="(cell, index) in board" 
+                    :key="index"
+                    class="cell"
+                    :class="{ 'occupied': cell !== '', 'winning-cell': winningCells.includes(index) }"
+                    @click="makeMove(index)"
+                >
+                    <span v-if="cell === 'X'" class="cell-x">❌</span>
+                    <span v-if="cell === 'O'" class="cell-o">⭕</span>
+                </div>
+            </div>
+
+            <!-- Game Controls -->
+            <div class="game-controls">
+                <button @click="resetGame" class="reset-button">
+                    🔄 New Game
+                </button>
+                <div class="score-board">
+                    <div class="score-item">
+                        <span class="score-label">❌ Wins:</span>
+                        <span class="score-value">{{ scores.X }}</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">⭕ Wins:</span>
+                        <span class="score-value">{{ scores.O }}</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">🤝 Ties:</span>
+                        <span class="score-value">{{ scores.tie }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ using Vue.js</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
