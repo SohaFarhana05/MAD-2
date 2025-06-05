@@ -7,6 +7,9 @@ In this lecture, we have learned and implemented the working of a basic calculat
 We have also learned basic HTML and CSS which are useful for JS.
 We have learned about event listeners, functions, etc. in JS
 
+### Lecture 2 - GUI Calculator
+In this lecture, we have learned and implemented the working of a gui calculator which basically means we will have buttons for numbers to type and calculate any arithmetic expression unlike the first lecture where we had space to type our expression. Implemented with HTML,CSS and JS.
+
 
 ## Week-03
 ### Lecture 1 - 🎮 Tic-Tac-Toe Collection
@@ -26,8 +29,6 @@ This workspace contains three distinct implementations of the classic tic-tac-to
 ---
 
 ## 🎯 Tic-tac-toe1: Vanilla JavaScript Version
-
-**Location:** `/Tic-tac-toe1/`
 
 ### 📋 Overview
 A pure client-side implementation using vanilla HTML, CSS, and JavaScript. Perfect for beginners learning web development fundamentals.
@@ -63,8 +64,6 @@ open index.html
 ---
 
 ## 🌐 Tic-tac-toe2: Flask Web Application
-
-**Location:** `/Tic-tac-toe2/`
 
 ### 📋 Overview
 A server-side implementation using Python Flask framework. Demonstrates session management, RESTful APIs, and server-client architecture.
@@ -116,8 +115,6 @@ python app.py
 ---
 
 ## ⚡ Tic-tac-toe3: Vue.js Modern Implementation
-
-**Location:** `/Tic-tac-toe3/`
 
 ### 📋 Overview
 A modern, reactive implementation using Vue.js 3 with beautiful animations and responsive design. Showcases contemporary frontend development practices.
@@ -188,55 +185,10 @@ This collection demonstrates a natural progression in web development:
 
 ---
 
-## 🎯 Getting Started Guide
 
-### For Beginners
-1. Start with **Tic-tac-toe1** to understand basic concepts
-2. Learn HTML structure and CSS styling
-3. Understand JavaScript event handling and DOM manipulation
-
-### For Intermediate Developers
-1. Explore **Tic-tac-toe2** for server-side concepts
-2. Learn Flask framework and Python web development
-3. Understand RESTful APIs and session management
-
-### For Advanced Developers
-1. Study **Tic-tac-toe3** for modern frontend patterns
-2. Learn Vue.js reactivity and component architecture
-3. Explore advanced CSS animations and responsive design
 
 ---
 
-## 🛠️ Development Environment Setup
-
-### Prerequisites
-- **Web Browser**: Chrome, Firefox, Safari, or Edge
-- **Text Editor**: VS Code, Sublime Text, or similar
-- **Python 3.x**: For Flask version (Tic-tac-toe2)
-- **Basic Git**: For version control (optional)
-
-### Recommended VS Code Extensions
-- **Live Server**: For local development server
-- **Python**: For Flask development
-- **Vetur** or **Vue Language Features**: For Vue.js development
-- **Prettier**: Code formatting
-- **Auto Rename Tag**: HTML tag editing
-
----
-
-## 📈 Comparison Matrix
-
-| Feature | Vanilla JS | Flask | Vue.js |
-|---------|------------|--------|--------|
-| **Setup Complexity** | ⭐ | ⭐⭐⭐ | ⭐⭐ |
-| **Learning Curve** | ⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
-| **Code Maintainability** | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Performance** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| **Scalability** | ⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| **Modern Features** | ⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Mobile Support** | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-
----
 
 ## 🎓 Educational Value
 
@@ -265,32 +217,6 @@ Each implementation teaches different aspects of web development:
 
 ---
 
-## 🚀 Next Steps & Enhancements
-
-### Potential Improvements for Each Version:
-
-#### Tic-tac-toe1 Enhancements:
-- [ ] Add sound effects
-- [ ] Implement AI opponent
-- [ ] Add difficulty levels  
-- [ ] Local storage for scores
-- [ ] Better animations
-
-#### Tic-tac-toe2 Enhancements:
-- [ ] Database integration
-- [ ] User authentication
-- [ ] Multiplayer support
-- [ ] Game history
-- [ ] WebSocket real-time updates
-
-#### Tic-tac-toe3 Enhancements:
-- [ ] TypeScript conversion
-- [ ] Component testing
-- [ ] Progressive Web App (PWA)
-- [ ] State management (Vuex/Pinia)
-- [ ] Build optimization
-
----
 
 ## 📄 License
 
